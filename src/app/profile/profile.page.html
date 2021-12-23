@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="userslist"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <div *ngIf="character">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <img src="{{character.image}}" alt="" />
+              <ion-card-title>
+                {{character.name}}
+              </ion-card-title>
+              <br />
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Especie</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <div *ngIf="character.status === 'Alive'; then alive else other"></div>
+                  <ng-template #alive>
+                    <ion-text color="primary">
+                      <h2>{{character.status}}</h2>
+                    </ion-text>
+                  </ng-template>
+                  <ng-template #other>
+                    <ion-text color="danger">
+                      <h2>{{character.status}}</h2>
+                    </ion-text>
+                  </ng-template>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Estado</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h2>{{character.species}}</h2>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Genero</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h2>{{character.gender}}</h2>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Tipo</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h2>{{character.type}}</h2>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Ubicacion actual</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h2>{{character.location.name}}</h2>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text color="primary">
+                    <h2>Lugar de origen</h2>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h2>{{character.origin.name}}</h2>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
