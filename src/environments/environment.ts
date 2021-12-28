@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyBgIF4XlcgcVdcrmunGAmrS6HWWUPFZrW4',
+    authDomain: 'app-rickandmorty-ea750.firebaseapp.com',
+    projectId: 'app-rickandmorty-ea750',
+    storageBucket: 'app-rickandmorty-ea750.appspot.com',
+    messagingSenderId: '16944723103',
+    appId: '1:16944723103:web:18b4fcb8c5f70bda6ddeaa',
+    measurementId: 'G-432XDTKYMT',
+  },
 };
 
 /*
