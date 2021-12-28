@@ -48,7 +48,32 @@ La lógica para la página de usuarios es la misma:
 ![image](https://user-images.githubusercontent.com/58191417/147571706-33492473-434f-453c-a124-78f4bc082869.png)
 
 ### Login
-completar con login
+a) **login.page.html**
+
+![image](https://user-images.githubusercontent.com/58191417/147594714-3c013b65-b59c-4f48-82c6-b88a4352b41c.png)
+![image](https://user-images.githubusercontent.com/58191417/147594749-d6951319-dcf3-457e-a30e-45c537ee7ae7.png)
+
+b) **login.page.ts**
+
+![image](https://user-images.githubusercontent.com/58191417/147594834-2700f003-13bb-4c54-90ec-06a8bc005136.png)
+
+### Registro de usuario
+
+1) **registration.page.html**
+
+![image](https://user-images.githubusercontent.com/58191417/147595002-5453c27a-d279-4911-9cbc-43173a0e40b1.png)
+
+2) **registration.page.ts**
+
+![image](https://user-images.githubusercontent.com/58191417/147595070-2d9ccd4d-3d6a-426f-9e98-47c200738853.png)
+
+### Autenticación con Firebase
+
+Existen funciones predefinidas por el servicio de firebase, estas se definen y editan (si es necesario) en el archivo **authentication-service.ts**.
+
+![image](https://user-images.githubusercontent.com/58191417/147598664-80935ee6-a285-4444-b0ea-8315dc19cf19.png)
+
+*Se observa en la imagen que entre las funciones se tiene una respectiva para el **inicio de sesión**, **registro de usuario**, **verificación de email** y **recuperación de contraseña**.*
 
 ### Módulos de aplicación
 • En el archivo **app.module.ts** se importan los módulos `AppComponent`, `AppRoutingModule`, `HttpClientModule`. Estos servirán para usar los componentes, el enrutamiento y el cliente http.
@@ -65,18 +90,42 @@ completar con login
 
 a) Para probar la aplicación, ejecutamos el comando `ionic serve`, este lanzará la aplicación en un servidor local y se presentará en el navegador la siguiente pantalla:
 
-adjuntar imagen de login
+![image](https://user-images.githubusercontent.com/58191417/147599268-067a6ab0-8c7a-4629-a6ff-9c88534813ba.png)
 
-b) Una vez iniciada la sesión, se presentará la pantalla de lista de usuarios:
+*En la pantalla se presentará el formulario de inicio de sesión, el botón para acceder al registro (con email o directamente con google) y el acceso a recuperación de contraseña*
 
-![image](https://user-images.githubusercontent.com/58191417/147575792-392bbe0e-d8de-4eb8-be5c-27ee374c916a.png)
+b) Si el usuario no tiene una cuenta, deberá acceder a la pantalla de registro y completar los campos con un correo electrónico y una contraseña:
 
-c) Al dar click en cualquier nombre, se redirigirá a la pantalla de perfil con los detalles del usuario elegido.
+![image](https://user-images.githubusercontent.com/58191417/147600033-5cc1f63c-456a-4e96-8c8d-484f735cc2cc.png)
+
+c) Al enviar los datos en el formulario, se presentará la siguiente pantalla indicando que se ha enviado un link para verificar el correo electrónico ingresado.
+
+![image](https://user-images.githubusercontent.com/58191417/147600123-cc2d18db-52e8-4a3c-bcfe-80171ecaccbf.png)
+
+d) Al acceder a la bandeja de entrada del correo ingresado, se presentará el correo automático con el link al cual se deberá acceder para verificar la cuenta.
+
+![image](https://user-images.githubusercontent.com/58191417/147600182-7bd73b25-27d9-4354-9f71-cba840d06e3f.png)
+
+e) El link nos redigirá a la siguiente pantalla dentro de la aplicación, indicando que el correo ha sido verificado con exito
+
+![image](https://user-images.githubusercontent.com/58191417/147601270-a9afb816-7a41-49b7-b39a-c1a04cd12185.png)
+
+f) De esta manera, al volver a la pantalla de inicio, basta con ingresar las nuevas credenciales para iniciar sesión dentro de la aplicación
+
+![image](https://user-images.githubusercontent.com/58191417/147600486-e9d85432-9297-4ad3-b27f-ead6a730e96b.png)
+
+g) Una vez iniciada la sesión, se presentará la pantalla de lista de usuarios:
+
+![image](https://user-images.githubusercontent.com/58191417/147600537-26f2ab18-e8f0-4527-8539-0cb1b1a88d61.png)
+
+* Para cerrar la sesión de usuario, se debe presionar el botón ubicado en la esquina superior derecha de la pantalla. Esta acción cerrará la sesión y nos redigirá a la pantalla con el formulario anterior.
+
+h) Al dar click en cualquier nombre, se redirigirá a la pantalla de perfil con los detalles del usuario elegido.
 
 ![image](https://user-images.githubusercontent.com/58191417/147576571-b3782195-aa22-4265-bc5f-b8cf99326a9e.png)
 ![image](https://user-images.githubusercontent.com/58191417/147576664-d6c55001-2e86-47f1-9055-49b109ed015c.png)
 
-d) Para volver a la página de lista de usuarios, basta con dar click en el botón hacia atrás ubicado alado del título.
+i) Para volver a la página de lista de usuarios, basta con dar click en el botón hacia atrás ubicado alado del título.
 
 ## APK y Bundle
 
@@ -114,8 +163,9 @@ III) Realizado esto, es posible abrir el proyecto de android directamente en el 
 
 ### Instalación en dispositivo
 
-Una vez generado el APK, podemos instalar la aplicación en un dispositivo Android y obtendremos el mismo resultado
+Una vez generado el APK, podemos instalar la aplicación en un dispositivo Android y obtendremos el mismo resultado presentado en el navegador
 
+![image](https://user-images.githubusercontent.com/58191417/147600792-2e7efcc8-a2e2-4736-8b52-98b08289266f.png)
 ![image](https://user-images.githubusercontent.com/58191417/147583008-e9b60779-259b-4bcd-b57d-9e7e5a910567.png)
 ![image](https://user-images.githubusercontent.com/58191417/147583051-3218eef2-0939-4cad-9a69-47a7496d6995.png)
 
