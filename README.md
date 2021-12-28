@@ -1,25 +1,45 @@
 # Aplicación móvil creada con Ionic, Angular y Firebase  
 
--> Para comenzar con la construcción de la aplicación móvil, es necesario instalar las siguientes dependencias:
+-> Para comenzar con la construcción de la aplicación móvil, es necesario crear las páginas que tendrá esta:
 
-`npm install @capacitor/camera @capacitor/storage @capacitor/filesystem`
+`ionic generate page profile`
 
-*Estas servirán para el control de la cámara, el almacenamiento y el sistema de archivos del dispositivo móvil*
+*El comando anterior generará automaticamente los componentes **.html**, **.scss** y **.ts** para el funcionamiento de la página de perfil.*
 
--> Si la aplicación se va a ejecutar en el navegador en un principio, es necesario instalar la dependencia de PWA para poder emular las funcionalidades correctamente.
+-> Ejecutamos el siguiente comando para generar la página para la lista de usuarios, obtendremos el resultado anteriormente mencionada.
 
-`npm install @ionic/pwa-elements`
+`ionic generate page userlist`
 
 ## Código fuente
-1) En el archivo **Tab2.tsx** será donde se importen los componentes de ionic y se invoque la funcionalidad de los componentes que conformen esta pantalla.
 
-![image](https://user-images.githubusercontent.com/58191417/147398127-eaac196d-ca0b-4abd-b439-a796aa9a97d2.png)
+### Página de perfil
+1) La funcionalidad de la página de perfiles se establecerá en el archivo **profile.page.ts**.
 
-2) A diferencia de Angular, en el archivo **App.tsx** será donde se maneje el enrutamiento de la aplicación, así como también la interfaz principal de la aplicación.
+![image](https://user-images.githubusercontent.com/58191417/147526694-60eae69f-edb4-44c2-bdf8-844f4b2c4734.png)
 
-![image](https://user-images.githubusercontent.com/58191417/147398187-3095707f-680b-45cd-98b0-7860c2428b5d.png)
+*Como se observa en la imagen, aquí es donde se hace el llamado al API que provee de los datos que se visualizarán posteriormente dentro de la aplicación.*
 
-3) Para manejar la funcionalidad de la aplicación se ha creado el hook `usePhotoGallery.ts`, este contendrá lo siguiente:
+2) El enrutamiento para el componente página de perfiles se lo define en el archivo **profile.module.ts**.
+
+![image](https://user-images.githubusercontent.com/58191417/147527103-f7eb00b5-0d7e-4550-af94-0ee7721591eb.png)
+
+*En este apartado se importan los módulos a utilizar, esto nos facilitará su utilización en otros módulos de la misma aplicación.*
+
+3) La interfaz gráfica de esta página, se codifica en **profile.page.html**.
+
+![image](https://user-images.githubusercontent.com/58191417/147527342-28b7e8fd-5848-4e7d-ae3e-c0a166064478.png)
+![image](https://user-images.githubusercontent.com/58191417/147527409-6558c993-275d-4438-b016-837191901fd7.png)
+![image](https://user-images.githubusercontent.com/58191417/147527434-097fad70-f751-489f-aec5-1c6dccbc6bd9.png)
+
+*Como se observa en el código, aquí se definen los componentes útiles para la presentación de la información y se invoca a las variables contenedoras de los datos provistos por el API*.
+
+### Lista de usuarios
+La lógica para la página de usuarios es la misma:
+1) Funcionalidad
+2) Enrutamiento
+3) Interfaz gráfica
+
+
 #### Llamadas a las librerias
 ![image](https://user-images.githubusercontent.com/58191417/147398261-44638cb5-74e8-46ed-a7c2-bc2490b909b3.png)
 
