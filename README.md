@@ -1,3 +1,9 @@
+### Integrantes:
+
+* Carlos Díaz 
+* John Vasconez
+* Alexis Yépez
+
 # Aplicación móvil creada con Ionic, Angular y Firebase  
 
 -> Para comenzar con la construcción de la aplicación móvil, es necesario crear las páginas que tendrá esta:
