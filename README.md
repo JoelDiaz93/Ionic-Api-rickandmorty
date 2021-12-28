@@ -6,7 +6,7 @@
 
 *El comando anterior generará automaticamente los componentes **.html**, **.scss** y **.ts** para el funcionamiento de la página de perfil.*
 
--> Ejecutamos el siguiente comando para generar la página para la lista de usuarios, obtendremos el resultado anteriormente mencionada.
+-> Ejecutamos el siguiente comando para generar la página para la lista de usuarios, obtendremos el resultado ya mencionado.
 
 `ionic generate page userlist`
 
@@ -36,67 +36,59 @@
 ### Lista de usuarios
 La lógica para la página de usuarios es la misma:
 1) Funcionalidad
+
+![image](https://user-images.githubusercontent.com/58191417/147571522-49ccd530-1e88-4958-b958-39a237e081a3.png)
+
 2) Enrutamiento
+
+![image](https://user-images.githubusercontent.com/58191417/147571585-05d3c533-6236-44a0-9638-c56b9342a7ea.png)
+
 3) Interfaz gráfica
 
+![image](https://user-images.githubusercontent.com/58191417/147571706-33492473-434f-453c-a124-78f4bc082869.png)
 
-#### Llamadas a las librerias
-![image](https://user-images.githubusercontent.com/58191417/147398261-44638cb5-74e8-46ed-a7c2-bc2490b909b3.png)
+### Login
+completar con login
 
-#### Función de captura de foto
-![image](https://user-images.githubusercontent.com/58191417/147398269-492048c9-60ad-410d-9cd2-540e598672fc.png)
+### Módulos de aplicación
+• En el archivo **app.module.ts** se importan los módulos `AppComponent`, `AppRoutingModule`, `HttpClientModule`. Estos servirán para usar los componentes, el enrutamiento y el cliente http.
 
-#### Función para guardar imagen
-![image](https://user-images.githubusercontent.com/58191417/147398281-51b9e255-733a-497b-bfaf-26869c8c0d2a.png)
+![image](https://user-images.githubusercontent.com/58191417/147574442-01bd2c1a-abef-48fd-a981-7a7ccb128c60.png)
 
-#### Función para eliminar imagen
-![image](https://user-images.githubusercontent.com/58191417/147398293-3636e485-96bb-4f9f-bee2-ea06da13a83b.png)
+• El enrutamiento de la raíz de la aplicación está definido en **app-routing.module.ts**.
 
-*Las funciones presentadas son las que darán funcionamiento a la galería de fotos, con estas se podrá tomar la foto, guardarla y también eliminarla.*
+![image](https://user-images.githubusercontent.com/58191417/147574655-a6f0399a-9f9d-46ce-b3d9-cd5b4a3d0d2b.png)
 
-4) Para manejar los permisos que tendrá la aplicación, debemos definir las reglas en el archivo **AndroidManifest.xml**.
-
-![image](https://user-images.githubusercontent.com/58191417/147422668-53b6208f-cb93-4043-8fc1-07ece6ae9d6f.png)
-
-5) Finalmente, invocamos a las funciones de tomar foto y borrar foto en los componentes que tendrán esta funcionalidad dentro de la aplicación. Esto en el archivo **Tab2.tsx**.
-
-![image](https://user-images.githubusercontent.com/58191417/147422782-3c809918-ce0a-451f-847f-cf78161f9983.png)
+*Aquí se establece las rutas para la página de perfil, la de lista de usuarios y la página de inicio de sesión de la aplicación*
 
 ## Funcionamiento de la aplicación
 
 a) Para probar la aplicación, ejecutamos el comando `ionic serve`, este lanzará la aplicación en un servidor local y se presentará en el navegador la siguiente pantalla:
 
-![image](https://user-images.githubusercontent.com/58191417/147422869-4764e474-7c97-48f1-8af2-aff95d7691e8.png)
+adjuntar imagen de login
 
-b) Al dar click por primera vez en el botón de la cámara, se solicitará permiso para acceder a la misma. Una vez concedido se iniciará la cámara del dispositivo de la siguiente manera:
+b) Una vez iniciada la sesión, se presentará la pantalla de lista de usuarios:
 
-![image](https://user-images.githubusercontent.com/58191417/147423038-e5972279-c851-472a-bce5-fbc11e9baa32.png)
+![image](https://user-images.githubusercontent.com/58191417/147575792-392bbe0e-d8de-4eb8-be5c-27ee374c916a.png)
 
-c) Al dar click en el botón, este tomará la foto, podemos elegir guardarla dando click en el **✓** o descartarla presionando la **X**
+c) Al dar click en cualquier nombre, se redirigirá a la pantalla de perfil con los detalles del usuario elegido.
 
-![image](https://user-images.githubusercontent.com/58191417/147422972-82e1f63f-4d6f-4b8c-bb6b-0daeffb09644.png)
+![image](https://user-images.githubusercontent.com/58191417/147576571-b3782195-aa22-4265-bc5f-b8cf99326a9e.png)
+![image](https://user-images.githubusercontent.com/58191417/147576664-d6c55001-2e86-47f1-9055-49b109ed015c.png)
 
-d) Al abrirse la cámara, se mostrará también un botón que, al dar click en el, nos permitira agregar imágenes a la galería manualmente.
-
-![image](https://user-images.githubusercontent.com/58191417/147427460-bb29a6d3-403c-41a2-b81f-80e10be55631.png)
-
-*El botón abrirá el explorador de archivos del dispositivo (en este caso del ordenador) para así poder elegir la imagen que querramos subir.*
-
-e) De esta manera la galería de fotos presentará las imagenes y fotos que se hayan almacenado
-
-![image](https://user-images.githubusercontent.com/58191417/147427731-cdd7a9c6-69f3-4ba7-93b7-87bdf1fcc271.png)
+d) Para volver a la página de lista de usuarios, basta con dar click en el botón hacia atrás ubicado alado del título.
 
 ## APK y Bundle
 
 #### Construcción de la aplicación
 
-I) Ejecutamos el comando `ionic build` en la raíz del proyecto para generar el directorio **build**, esta carpeta será la base para "compilar" el proyecto para cada plataforma deseada.
+I) Ejecutamos el comando `ionic build` en la raíz del proyecto para generar el directorio **www**, esta carpeta será la base para "compilar" el proyecto para cada plataforma deseada.
 
-![image](https://user-images.githubusercontent.com/58191417/147428145-a69b14d4-c465-4309-b94d-1a0e40a1c6e7.png)
+![image](https://user-images.githubusercontent.com/58191417/147577891-d9fdadbd-a1bc-4522-96f5-c6342cc345b6.png)
 
-II) Una vez generado el directorio **build**, ejecutamos el comando `ionic cap add android`. Este comando creará el directorio **android** que será la aplicación como tal para la plataforma Android (si se requiere para plataforma IOS bastaría la ejecución del comando `ionic cap add ios`).
+II) Una vez generado el directorio **www**, ejecutamos el comando `ionic cap add android`. Este comando creará el directorio **android** que será la aplicación como tal para la plataforma Android (si se requiere para plataforma IOS bastaría la ejecución del comando `ionic cap add ios`).
 
-![image](https://user-images.githubusercontent.com/58191417/147428312-bb1caa15-8b53-4ff8-9995-f62349bce5c2.png)
+![image](https://user-images.githubusercontent.com/58191417/147581705-8ed3578c-9eab-447a-9c99-969084b2e895.png)
 
 III) Realizado esto, es posible abrir el proyecto de android directamente en el IDE Android Studio con el comando `ionic cap open android`.
 
@@ -104,7 +96,7 @@ III) Realizado esto, es posible abrir el proyecto de android directamente en el 
 
 • Dentro de Android Studio, nos dirigimos a la ruta **Build > Build Bundle(s)/APK(s) > Build APK(s)**
 
-![image](https://user-images.githubusercontent.com/58191417/147428647-2aaaa73c-7d80-48d4-a20c-f3269f6f1a33.png)
+![image](https://user-images.githubusercontent.com/58191417/147582296-02da0720-01f9-4ce8-9aec-206aa0eb6b17.png)
 
 • Comenzará un proceso de Gradle y el resultado final será el archivo **apk** de la aplicación, al cual podremos acceder desde el explorador de archivos del sistema:
 
@@ -114,7 +106,7 @@ III) Realizado esto, es posible abrir el proyecto de android directamente en el 
 
 • Dentro de Android Studio, nos dirigimos a la ruta **Build > Build Bundle(s)/APK(s) > Build Bundle(s)**
 
-![image](https://user-images.githubusercontent.com/58191417/147428857-326477e7-2d8c-4820-9bdb-3c7cd877f398.png)
+![image](https://user-images.githubusercontent.com/58191417/147582328-451e70e0-6f0d-457e-a4f1-d4f9f1160ddf.png)
 
 • Comenzará un proceso de Gradle y el resultado final será el archivo **aab** de la aplicación, al cual podremos acceder desde el explorador de archivos del sistema:
 
@@ -124,5 +116,7 @@ III) Realizado esto, es posible abrir el proyecto de android directamente en el 
 
 Una vez generado el APK, podemos instalar la aplicación en un dispositivo Android y obtendremos el mismo resultado
 
-![image](https://user-images.githubusercontent.com/58191417/147431526-35d6d41b-7343-404e-a965-c0f2d9518c37.png)
-![image](https://user-images.githubusercontent.com/58191417/147431157-f78ba697-de56-4607-8cdd-7f8fce2f0586.png)
+![image](https://user-images.githubusercontent.com/58191417/147583008-e9b60779-259b-4bcd-b57d-9e7e5a910567.png)
+![image](https://user-images.githubusercontent.com/58191417/147583051-3218eef2-0939-4cad-9a69-47a7496d6995.png)
+
+
